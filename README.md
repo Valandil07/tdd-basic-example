@@ -83,10 +83,21 @@ Result=13
 ## Subtraktion
 
 ### 1.Test
+3-4=-1
 
 firstOperand=3
 
-SecondOperand=-4
+SecondOperand=4
+
+Result=-1
+
+### 2.Test
+
+Minus & Minus = Plus
+7 - (-4) = 11
+firstOperand=7
+
+SecondOperand=11
 
 Result=
 

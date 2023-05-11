@@ -94,6 +94,62 @@ public class CalculatorTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+    @Test
+    public void ensureSixPlusSevenEqualsThirteen() {
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 6;
+        int secondOperand = 7;
+        int expectedResult = 13;
+        int result = 0;
+
+        // Act
+        result = new Calculator().sum(firsOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureThreeMinusFourEqualsMinusOne() {
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 3;
+        int secondOperand = 4;
+        int expectedResult = -1;
+        int result = 0;
+
+        // Act
+        result = new Calculator().subtract(firsOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureMinusSevenMinusMinusFourEqualsEleven() {
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firsOperand = 7;
+        int secondOperand = -4;
+        int expectedResult = 11;
+        int result = 0;
+
+        // Act
+        result = new Calculator().subtract(firsOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
 
 
     @Test
