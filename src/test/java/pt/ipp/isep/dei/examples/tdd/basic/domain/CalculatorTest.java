@@ -2,8 +2,7 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
@@ -94,6 +93,57 @@ public class CalculatorTest {
 
         // Assert
         assertEquals(expectedResult, result);
+    }
+
+
+    @Test
+    public void ensureThreeMultipliedByZeroEqualsZero() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = 3;
+        int secondOperand = 0;
+        int expectedResult = 0;
+        int result = 0;
+
+        // Act
+        result = new Calculator().multiply(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureSixDividedByMinusTwoEqualsMinusThree() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = 6;
+        int secondOperand = -2;
+        int expectedResult = -3;
+        int result = 3;
+
+        // Act
+        result = new Calculator().divide(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureSevenDividedByZeroThrowsException() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        Calculator calculator = new Calculator();
+
+        int firstOperand = 7;
+        int secondOperand = 0;
+
+        assertThrows(ArithmeticException.class,
+                () -> calculator.divide(firstOperand, secondOperand));
     }
 }
 

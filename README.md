@@ -107,8 +107,16 @@ Result=0
 
 ### 1.Test
 
-firstOperand=7
+firstOperand=6
 
 SecondOperand=-2
 
-Result=-3.5
+Result=-3
+
+
+### 2. Test
+firstOperand=7
+
+SecondOperand=0
+
+Result=ArithmeticException
