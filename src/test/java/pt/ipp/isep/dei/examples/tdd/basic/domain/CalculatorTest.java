@@ -161,7 +161,7 @@ public class CalculatorTest {
         int firstOperand = 3;
         int secondOperand = 0;
         int expectedResult = 0;
-        int result = 0;
+        int result;
 
         // Act
         result = new Calculator().multiply(firstOperand, secondOperand);
@@ -179,7 +179,7 @@ public class CalculatorTest {
         int firstOperand = 6;
         int secondOperand = -2;
         int expectedResult = -3;
-        int result = 3;
+        int result;
 
         // Act
         result = new Calculator().divide(firstOperand, secondOperand);
@@ -200,6 +200,40 @@ public class CalculatorTest {
 
         assertThrows(ArithmeticException.class,
                 () -> calculator.divide(firstOperand, secondOperand));
+    }
+
+    @Test
+    public void ensureFactorialOfFiveEqualsOneHundredAndTwenty() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = 5;
+        int expectedResult = 120;
+        int result;
+
+        // Act
+        result = new Calculator().factorial(firstOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureFactorialOfZeroEqualsOne() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = 0;
+        int expectedResult = 1;
+        int result;
+
+        // Act
+        result = new Calculator().factorial(firstOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
     }
 }
 

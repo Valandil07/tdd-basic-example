@@ -131,3 +131,23 @@ firstOperand=7
 SecondOperand=0
 
 Result=ArithmeticException
+
+## Factorial
+
+### 1. Test
+
+firstOperand=5
+
+Result=120
+
+### 2. Test
+
+firstOperand=0
+
+Result=1
+
+### 3. Test
+
+firstOperand=-2
+
+Result=ArithmeticException

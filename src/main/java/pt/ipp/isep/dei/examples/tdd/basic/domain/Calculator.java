@@ -29,6 +29,13 @@ public class Calculator {
     }
 
     public int factorial(int firstOperand) {
-        throw new UnsupportedOperationException();
+        if(firstOperand < 0){
+            throw new ArithmeticException("Negative Factorial is not defined!");
+        }
+        int result = 1;
+        for (int i = 1; i <= firstOperand; i++) {
+            result = result * i;
+        }
+        return result;
     }
 }
