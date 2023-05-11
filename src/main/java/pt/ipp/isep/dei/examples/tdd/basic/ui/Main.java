@@ -8,5 +8,6 @@ public class Main {
         Calculator calculator = new Calculator();
         System.out.println(calculator.sum(3, 4));
         System.out.println(calculator.multiply(3,0));
+        System.out.println(calculator.divide(4,2));
     }
 }

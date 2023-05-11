@@ -30,9 +30,7 @@ public class Calculator {
     }
 
     public int multiply(int firstOperand, int secondOperand) {
-        if(firstOperand == 0){
-            return 0;
-        } else if (secondOperand == 0) {
+        if(firstOperand == 0 || secondOperand == 0){
             return 0;
         } else {
             return (firstOperand * secondOperand);
