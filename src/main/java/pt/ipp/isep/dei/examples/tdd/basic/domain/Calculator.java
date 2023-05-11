@@ -21,14 +21,27 @@ public class Calculator {
     }
 
     public int divide(int dividend, int divisor) {
-        throw new UnsupportedOperationException();
+        if(divisor==0){
+            throw new ArithmeticException("Division with 0 not allowed");
+        }
+        else {
+            return (dividend / divisor);
+        }
     }
 
     public int multiply(int firstOperand, int secondOperand) {
-        throw new UnsupportedOperationException();
+        if(firstOperand == 0){
+            return 0;
+        } else if (secondOperand == 0) {
+            return 0;
+        } else {
+            return (firstOperand * secondOperand);
+        }
     }
 
     public int factorial(int firstOperand) {
         throw new UnsupportedOperationException();
     }
+
+
 }
