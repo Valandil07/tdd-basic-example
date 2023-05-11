@@ -235,6 +235,19 @@ public class CalculatorTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureFactorialOfMinusTwoThrowsException() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        Calculator calculator = new Calculator();
+
+        int firstOperand = -2;
+
+        assertThrows(ArithmeticException.class,
+                () -> calculator.factorial(firstOperand));
+    }
 }
 
 
