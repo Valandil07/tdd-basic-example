@@ -66,15 +66,49 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
   - https://mvnrepository.com/artifact/org.pitest/pitest-junit5-plugin
     - required to work with JUnit5
 
-## Testplan
+# Testplan
 
-# Addition
+## Addition
 
-# Subtraktion
+### 1.Test
+6+7=13
+
+firstOperand=6
+
+SecondOperand=7
+
+Result=13
 
 
-# Multiplikation
+## Subtraktion
 
-# Division
+### 1.Test
+
+firstOperand=3
+
+SecondOperand=-4
+
+Result=
+
+## Multiplikation
+
+### 1.Test
+
+Multiplication with 0 = 0
+
+firstOperand=3
+
+SecondOperand=0
+
+Result=0
 
 
+## Division
+
+### 1.Test
+
+firstOperand=7
+
+SecondOperand=-2
+
+Result=-3.5
