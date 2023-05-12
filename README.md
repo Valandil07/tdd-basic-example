@@ -59,7 +59,7 @@ mvn org.pitest:pitest-maven:mutationCoverage -DwithHistory
 ### Complete example
 
 ``` 
-mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFile=target/fasterPitMutationTesting-history.txt -DhistoryOutputFile=target/fasterPitMutationTesting-history.txt -Dsonar.pitest.mode=reuseReport -Dthreads=4 -DtimestampedReports=false
+mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFile=target/fasterPitMutationTesting-history.txt -DhistoryOutputFile=target/fasterPitMutationTesting-history.txt -Dsonar.pitest.mode=reuseReport -Dthreads=16 -DtimestampedReports=false
 ```
 ## Jacoco dependencies
 * https://github.com/pitest/pitest-junit5-plugin
@@ -160,6 +160,8 @@ Result=
 
 ### 1.Test
 
+something * zero = zero
+
 Multiplication with 0 = 0
 
 firstOperand=3
@@ -168,6 +170,35 @@ SecondOperand=0
 
 Result=0
 
+### 2.Test
+
+zero * something = zero
+
+firstOperand=0
+
+SecondOperand=3
+
+Result=0
+
+### 3.Test
+
+zero * zero = zero
+
+firstOperand=0
+
+SecondOperand=0
+
+Result=0
+
+### 4.Test
+
+something * something = something
+
+firstOperand=12
+
+SecondOperand=12
+
+Result=144
 
 ## Division
 
