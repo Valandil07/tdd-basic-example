@@ -153,7 +153,7 @@ public class CalculatorTest {
 
 
     @Test
-    public void ensureThreeMultipliedByZeroEqualsZero() {
+    public void ensureMultiplicationThreeMultipliedByZeroEqualsZero() {
         System.out.println("\t\tExecuting " + new Object() {
         }.getClass().getEnclosingMethod().getName() + " Test");
 
@@ -161,6 +161,60 @@ public class CalculatorTest {
         int firstOperand = 3;
         int secondOperand = 0;
         int expectedResult = 0;
+        int result;
+
+        // Act
+        result = new Calculator().multiply(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureMultiplicationZeroMultipliedByThreeEqualsZero() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = 0;
+        int secondOperand = 3;
+        int expectedResult = 0;
+        int result;
+
+        // Act
+        result = new Calculator().multiply(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureMultiplicationZeroMultipliedByZeroEqualsZero() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = 0;
+        int secondOperand = 0;
+        int expectedResult = 0;
+        int result;
+
+        // Act
+        result = new Calculator().multiply(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureMultiplicationTwelveMultipliedByTwelveEqualsHundredFourtyFour() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = 12;
+        int secondOperand = 12;
+        int expectedResult = 144;
         int result;
 
         // Act

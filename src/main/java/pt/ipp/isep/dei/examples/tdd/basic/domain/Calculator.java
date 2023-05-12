@@ -30,11 +30,13 @@ public class Calculator {
     }
 
     public int multiply(int firstOperand, int secondOperand) {
+        int result;
         if(firstOperand == 0 || secondOperand == 0){
-            return 0;
+            result = 0;
         } else {
-            return (firstOperand * secondOperand);
+            result = firstOperand * secondOperand;
         }
+        return result;
     }
 
     public int factorial(int firstOperand) {
