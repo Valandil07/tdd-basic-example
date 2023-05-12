@@ -2,6 +2,7 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import org.junit.jupiter.api.*;
 
 import java.awt.print.Book;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,5 +85,11 @@ public class BookmarkToolTest {
 
         ArrayList<Bookmark> result = bmt.getBookmarkList();
         assertEquals(expected, result);
+    }
+
+    @Test
+    public void invalidURLthrowsException(){
+        String url = "xxx";
+        assertThrows(MalformedURLException.class, () -> new Bookmark(url));
     }
 }
