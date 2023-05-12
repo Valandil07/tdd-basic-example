@@ -76,6 +76,80 @@ public class CalculatorTest {
      * Act I sum three to minus two<p>
      * Assert the sum result should be one.
      */
+
+    @Test
+    public void ensureSixPlusZeroEqualsSix() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        int expectedResult = 6;
+        int firstOperand = 6;
+        int secondOperand = 0;
+        int result;
+
+        result = new Calculator().sum(firstOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureZeroPlusSixEqualsSix() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        int expectedResult = 6;
+        int firstOperand = 0;
+        int secondOperand = 6;
+        int result;
+
+        result = new Calculator().sum(firstOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureZeroPlusZeroEqualsZero() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        int expectedResult = 0;
+        int firstOperand = 0;
+        int secondOperand = 0;
+        int result;
+
+        result = new Calculator().sum(firstOperand, secondOperand);
+
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureIntegerMinimumPlusMinusOneThrowsException() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        Calculator calculator = new Calculator();
+
+        int firstOperand = Integer.MIN_VALUE;
+        int secondOperand = -1;
+
+        assertThrows(IllegalArgumentException.class,
+                () -> calculator.sum(firstOperand, secondOperand));
+    }
+
+    @Test
+    public void ensureIntegerMaximumPlusOneThrowsException() {
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        Calculator calculator = new Calculator();
+
+        int firstOperand = Integer.MAX_VALUE;
+        int secondOperand = 1;
+
+        assertThrows(IllegalArgumentException.class,
+                () -> calculator.sum(firstOperand, secondOperand));
+    }
+
     @Test
     public void ensureThreePlusMinusTwoEqualsOne() {
         //HACK: for demonstration purposes only

@@ -79,6 +79,59 @@ SecondOperand=7
 
 Result=13
 
+### 2.Test
+6+0=6
+
+firstOperand=6
+
+SecondOperand=0
+
+Result=6
+
+### 3.Test
+0+6=6
+
+firstOperand=0
+
+SecondOperand=6
+
+Result=6
+
+### 4.Test
+0+0=0
+
+firstOperand=0
+
+SecondOperand=0
+
+Result=0
+
+### 5.Test
+Integer Underflow
+
+firstOperand=Integer_MIN
+
+SecondOperand=-1
+
+Result=Exception
+
+### 6.Test
+Integer Overflow
+
+firstOperand=Integer_MAX
+
+SecondOperand=1
+
+Result=Exception
+
+### 7.Test
+3+(-2)=1
+
+firstOperand=3
+
+SecondOperand=-1
+
+Result=1
 
 ## Subtraktion
 
@@ -94,7 +147,9 @@ Result=-1
 ### 2.Test
 
 Minus & Minus = Plus
+
 7 - (-4) = 11
+
 firstOperand=7
 
 SecondOperand=11

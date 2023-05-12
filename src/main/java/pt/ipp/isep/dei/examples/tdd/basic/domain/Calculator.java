@@ -14,10 +14,17 @@ public class Calculator {
      * @return The sum of firstOperand with secondOperand.
      */
     public int sum(int firstOperand, int secondOperand) {
+        if ((long)firstOperand + (long)secondOperand < Integer.MIN_VALUE){
+            throw new IllegalArgumentException("Result lower than Integer Minimum Value!");
+        }
+        if ((long)firstOperand + (long)secondOperand > Integer.MAX_VALUE){
+            throw new IllegalArgumentException("Result higher than Integer Maximum Value!");
+        }
         return firstOperand + secondOperand;
     }
 
-    public int subtract(int firstOperand, int secondOperand) {return firstOperand - secondOperand;
+    public int subtract(int firstOperand, int secondOperand) {
+        return firstOperand - secondOperand;
     }
 
     public int divide(int dividend, int divisor) {
