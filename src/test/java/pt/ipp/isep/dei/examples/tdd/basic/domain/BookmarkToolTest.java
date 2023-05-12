@@ -44,11 +44,11 @@ public class BookmarkToolTest {
 
     @Test
     public void initializingBookmarkToolCreatesBookmarkTool(){
-        ArrayList expected = new ArrayList();
+        ArrayList<Bookmark> expected = new ArrayList<Bookmark>();
 
         BookmarkTool bmt = new BookmarkTool();
 
-        ArrayList result = bmt.getBookmarkList();
+        ArrayList<Bookmark> result = bmt.getBookmarkList();
         assertEquals(result, expected);
     }
 
@@ -59,13 +59,14 @@ public class BookmarkToolTest {
 
     @Test
     public void addBookmarkToBookmarklistAddsBookmarkToList(){
-        ArrayList expected = new ArrayList();
-        expected.add(new Bookmark("https://www.orf.at/"));
+        ArrayList<Bookmark> expected = new ArrayList<Bookmark>();
+        Bookmark bm = new Bookmark("https://www.orf.at/");
+        expected.add(bm);
         BookmarkTool bmt = new BookmarkTool();
 
-        bmt.addBookmark(new Bookmark("https://www.orf.at/"));
+        bmt.addBookmark(bm);
 
-        ArrayList result = bmt.getBookmarkList();
+        ArrayList<Bookmark> result = bmt.getBookmarkList();
         assertEquals(expected, result);
     }
 }

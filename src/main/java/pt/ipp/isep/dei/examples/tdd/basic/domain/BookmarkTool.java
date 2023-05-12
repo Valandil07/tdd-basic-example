@@ -3,12 +3,12 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import java.util.ArrayList;
 
 public class BookmarkTool {
-    private ArrayList bookmarklist;
+    private ArrayList<Bookmark> bookmarklist;
     public BookmarkTool() {
-        bookmarklist = new ArrayList();
+        bookmarklist = new ArrayList<Bookmark>();
     }
 
-    public ArrayList getBookmarkList() {
+    public ArrayList<Bookmark> getBookmarkList() {
         return bookmarklist;
     }
 

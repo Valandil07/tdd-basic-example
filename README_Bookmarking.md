@@ -14,3 +14,10 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 Line Coverage = 100%
 Mutation Coverage = 100%
 
+### Test: createBookmarkCreatedBookmark
+Line Coverage = 100%
+Mutation Coverage = 100%
+
+### Test: addBookmarkToBookmarklistAddsBookmarkToList
+Line Coverage = 100%
+Mutation Coverage = 100%
