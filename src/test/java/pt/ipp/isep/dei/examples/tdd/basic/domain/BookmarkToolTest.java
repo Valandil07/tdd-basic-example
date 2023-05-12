@@ -1,5 +1,9 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import org.junit.jupiter.api.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BookmarkToolTest {
@@ -38,9 +42,13 @@ public class BookmarkToolTest {
     }
 
     @Test
-    public void createBookmarkTool(){
+    public void initializingBookmarkToolCreatesBookmarkTool(){
+        ArrayList expected = new ArrayList();
+
         BookmarkTool bmt = new BookmarkTool();
-        assertEquals(bmt.getClass(), BookmarkTool.class);
+
+        ArrayList result = bmt.getBookmarkList();
+        assertEquals(result, expected);
     }
 
 
