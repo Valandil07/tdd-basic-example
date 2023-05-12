@@ -69,4 +69,20 @@ public class BookmarkToolTest {
         ArrayList<Bookmark> result = bmt.getBookmarkList();
         assertEquals(expected, result);
     }
+    @Test
+    public void addSecondBookmarkToBookmarklist(){
+        ArrayList<Bookmark> expected = new ArrayList<Bookmark>();
+        Bookmark bm1 = new Bookmark("https://www.orf.at/");
+        Bookmark bm2 = new Bookmark("https://www.derstandard.at");
+
+        expected.add(bm1);
+        expected.add(bm2);
+        BookmarkTool bmt = new BookmarkTool();
+
+        bmt.addBookmark(bm1);
+        bmt.addBookmark(bm2);
+
+        ArrayList<Bookmark> result = bmt.getBookmarkList();
+        assertEquals(expected, result);
+    }
 }
