@@ -56,4 +56,16 @@ public class BookmarkToolTest {
     public void createBookmarkCreatedBookmark(){
         Bookmark bookmark = new Bookmark("https://www.orf.at/");
         }
+
+    @Test
+    public void addBookmarkToBookmarklistAddsBookmarkToList(){
+        ArrayList expected = new ArrayList();
+        expected.add(new Bookmark("https://www.orf.at/"));
+        BookmarkTool bmt = new BookmarkTool();
+
+        bmt.addBookmark(new Bookmark("https://www.orf.at/"));
+
+        ArrayList result = bmt.getBookmarkList();
+        assertEquals(expected, result);
+    }
 }
