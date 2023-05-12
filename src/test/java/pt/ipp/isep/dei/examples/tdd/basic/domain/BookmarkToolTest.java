@@ -3,6 +3,7 @@ import org.junit.jupiter.api.*;
 
 import java.awt.print.Book;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,14 +55,14 @@ public class BookmarkToolTest {
     }
 
     @Test
-    public void createBookmarkCreatedBookmark(){
-        Bookmark bookmark = new Bookmark("https://www.orf.at/");
+    public void createBookmarkCreatedBookmark() throws MalformedURLException {
+        Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
         }
 
     @Test
-    public void addBookmarkToBookmarklistAddsBookmarkToList(){
+    public void addBookmarkToBookmarklistAddsBookmarkToList() throws MalformedURLException {
         ArrayList<Bookmark> expected = new ArrayList<Bookmark>();
-        Bookmark bm = new Bookmark("https://www.orf.at/");
+        Bookmark bm = new Bookmark(new URL("https://www.orf.at/"));
         expected.add(bm);
         BookmarkTool bmt = new BookmarkTool();
 
@@ -71,10 +72,10 @@ public class BookmarkToolTest {
         assertEquals(expected, result);
     }
     @Test
-    public void addSecondBookmarkToBookmarklist(){
+    public void addSecondBookmarkToBookmarklist() throws MalformedURLException {
         ArrayList<Bookmark> expected = new ArrayList<Bookmark>();
-        Bookmark bm1 = new Bookmark("https://www.orf.at/");
-        Bookmark bm2 = new Bookmark("https://www.derstandard.at");
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        Bookmark bm2 = new Bookmark(new URL("https://www.derstandard.at"));
 
         expected.add(bm1);
         expected.add(bm2);
@@ -88,8 +89,7 @@ public class BookmarkToolTest {
     }
 
     @Test
-    public void invalidURLthrowsException(){
-        String url = "xxx";
-        assertThrows(MalformedURLException.class, () -> new Bookmark(url));
+    public void invalidURLThrowsException(){
+        assertThrows(MalformedURLException.class, () -> new Bookmark(new URL("xxx")));
     }
 }

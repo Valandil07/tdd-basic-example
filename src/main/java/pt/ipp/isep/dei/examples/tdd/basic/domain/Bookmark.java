@@ -1,8 +1,10 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
+import java.net.URL;
+
 public class Bookmark {
-    private String url;
-    public Bookmark(String url) {
+    private URL url;
+    public Bookmark(URL url) {
         this.url = url;
     }
 }
