@@ -7,4 +7,5 @@ public class Bookmark {
     public Bookmark(URL url) {
         this.url = url;
     }
+
 }

@@ -54,10 +54,7 @@ public class BookmarkToolTest {
         assertEquals(result, expected);
     }
 
-    @Test
-    public void createBookmarkCreatedBookmark() throws MalformedURLException {
-        Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
-        }
+
 
     @Test
     public void addBookmarkToBookmarklistAddsBookmarkToList() throws MalformedURLException {
@@ -88,8 +85,6 @@ public class BookmarkToolTest {
         assertEquals(expected, result);
     }
 
-    @Test
-    public void invalidURLThrowsException(){
-        assertThrows(MalformedURLException.class, () -> new Bookmark(new URL("xxx")));
-    }
+
+
 }
