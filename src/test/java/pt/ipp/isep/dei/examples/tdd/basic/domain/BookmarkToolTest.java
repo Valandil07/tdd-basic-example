@@ -2,19 +2,19 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BookmarkTest {
+public class BookmarkToolTest {
     @BeforeAll
     public static void classSetUp() {
         //HACK: for demonstration purposes only
         System.out.println(
-                "This is a BookmarkTest class method and takes place before any @Test is executed");
+                "This is a BookmarkToolTest class method and takes place before any @Test is executed");
     }
 
     @AfterAll
     public static void classTearDown() {
         //HACK: for demonstration purposes only
         System.out.println(
-                "This is a BookmarkTest class method and takes place after all @Test are executed");
+                "This is a BookmarkToolTest class method and takes place after all @Test are executed");
     }
 
     @BeforeEach
@@ -37,6 +37,11 @@ public class BookmarkTest {
         fail("a disabled failing test");
     }
 
+    @Test
+    public void createBookmarkTool(){
+        BookmarkTool bmt = new BookmarkTool();
+        assertEquals(bmt.getClass(), BookmarkTool.class);
+    }
 
 
 }

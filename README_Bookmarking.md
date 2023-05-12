@@ -7,5 +7,3 @@ mvn clean test
 ``` 
 mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFile=target/fasterPitMutationTesting-history.txt -DhistoryOutputFile=target/fasterPitMutationTesting-history.txt -Dsonar.pitest.mode=reuseReport -Dthreads=16 -DtimestampedReports=false
 ```
-
-# Unit Tests
