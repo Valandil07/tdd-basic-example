@@ -1,6 +1,7 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import org.junit.jupiter.api.*;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,5 +52,8 @@ public class BookmarkToolTest {
         assertEquals(result, expected);
     }
 
-
+    @Test
+    public void createBookmarkCreatedBookmark(){
+        Bookmark bookmark = new Bookmark("https://www.orf.at/");
+        }
 }
