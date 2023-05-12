@@ -11,4 +11,8 @@ public class BookmarkTool {
     public ArrayList getBookmarkList() {
         return bookmarklist;
     }
+
+    public void addBookmark(Bookmark bookmark) {
+        bookmarklist.add(bookmark);
+    }
 }
