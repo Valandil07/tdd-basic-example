@@ -151,6 +151,44 @@ public class CalculatorTest {
     }
 
     @Test
+    public void ensureIntegerMaxMinusOnePlusOneEqualsIntegerMax() {
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = Integer.MAX_VALUE-1;
+        int secondOperand = 1;
+        int expectedResult = Integer.MAX_VALUE;
+        int result;
+
+        // Act
+        result = new Calculator().sum(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureIntegerMinPlusOnePlusMinusOneEqualsIntegerMin() {
+        //HACK: for demonstration purposes only
+        System.out.println("\t\tExecuting " + new Object() {
+        }.getClass().getEnclosingMethod().getName() + " Test");
+
+        // Arrange
+        int firstOperand = Integer.MIN_VALUE+1;
+        int secondOperand = -1;
+        int expectedResult = Integer.MIN_VALUE;
+        int result;
+
+        // Act
+        result = new Calculator().sum(firstOperand, secondOperand);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
     public void ensureThreePlusMinusTwoEqualsOne() {
         //HACK: for demonstration purposes only
         System.out.println("\t\tExecuting " + new Object() {

@@ -133,6 +133,24 @@ SecondOperand=-1
 
 Result=1
 
+### 8.Test
+Integer Overflow
+
+firstOperand=Integer_MAX-1
+
+SecondOperand=1
+
+Result=Integer_MAX
+
+### 8.Test
+Integer Underflow
+
+firstOperand=Integer_MIN+1
+
+SecondOperand=-1
+
+Result=Integer_MIN
+
 ## Subtraktion
 
 ### 1.Test
