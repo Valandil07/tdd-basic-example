@@ -13,6 +13,15 @@ public class BookmarkTool {
     }
 
     public void addBookmark(Bookmark bookmark) {
-        bookmarklist.add(bookmark);
+        boolean duplicate = false;
+        for (Bookmark bm:bookmarklist) {
+            if(bm.equals(bookmark)){
+                bm.increaseRating();
+                duplicate = true;
+            }
+        }
+        if (!duplicate){
+            bookmarklist.add(bookmark);
+        }
     }
 }
