@@ -141,6 +141,8 @@
                     </dependency>
                 </dependencies>
                 <configuration>
+                    <coverageThreshold>90</coverageThreshold>
+                    <mutationThreshold>90</mutationThreshold>
                     <!--<timestampedReports>false</timestampedReports>-->
                     <!--<inScopeClasses>
                         <param>lapr.project.model.*</param>
