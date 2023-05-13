@@ -31,10 +31,15 @@ public class BookmarkTest {
     @Test
     public void checkIfTwoTagsAreAddedToBookmark() throws MalformedURLException {
         // Arrange
+        String tag1 = "News";
+        String tag2 = "Sports";
         int expected = 2;
+        ArrayList<String> expected2 = new ArrayList<>();
+        expected2.add(tag1);
+        expected2.add(tag2);
         Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
-        bookmark.addTag("News");
-        bookmark.addTag("Sports");
+        bookmark.addTag(tag1);
+        bookmark.addTag(tag2);
 
         // Act
         ArrayList<String> taglist = bookmark.getTags();
@@ -42,6 +47,7 @@ public class BookmarkTest {
 
         // Assert
         assertEquals(expected, result);
+        assertEquals(expected2, taglist);
     }
 
     @Test
