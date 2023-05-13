@@ -51,13 +51,30 @@ public class BookmarkTest {
     }
 
     @Test
-    public void checkIfTagShorterThan4CharactersThrowsException() throws MalformedURLException {
+    public void TagCheckIfLengthIs3CharactersThrowsException() throws MalformedURLException {
         // Arrange
         Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
 
         // Act & Assert
         assertThrows(IllegalArgumentException.class,
-                () -> bookmark.addTag("Web"));
+                () -> bookmark.addTag("123"));
+    }
+    @Test
+    public void TagCheckIfLengthIs4Characters() throws MalformedURLException {
+        // Arrange
+        Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
+
+        // Act & Assert
+        bookmark.addTag("1234");
+    }
+
+    @Test
+    public void TagCheckIfLengthIs5Characters() throws MalformedURLException {
+        // Arrange
+        Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
+
+        // Act & Assert
+        bookmark.addTag("12345");
     }
 
     @Test
