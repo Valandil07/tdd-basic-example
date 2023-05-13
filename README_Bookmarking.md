@@ -25,3 +25,5 @@ Mutation Coverage = 100%
 ### Test: invalidURLthrowsException
 Line Coverage = 100%
 Mutation Coverage = 100%
+
+Test
