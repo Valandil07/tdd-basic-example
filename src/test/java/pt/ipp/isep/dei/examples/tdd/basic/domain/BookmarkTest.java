@@ -43,4 +43,14 @@ public class BookmarkTest {
         // Assert
         assertEquals(expected, result);
     }
+
+    @Test
+    public void checkIfTagShorterThan4CharactersThrowsException() throws MalformedURLException {
+        // Arrange
+        Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+                () -> bookmark.addTag("Web"));
+    }
 }
