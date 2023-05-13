@@ -13,6 +13,9 @@ public class Bookmark {
     }
 
     public void addTag(String tag) {
+        if(tag.length() < 4){
+            throw new IllegalArgumentException("Tag is too short!");
+        }
         tags.add(tag);
     }
 
