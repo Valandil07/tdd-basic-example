@@ -14,5 +14,6 @@ public class BookmarkTool {
 
     public void addBookmark(Bookmark bookmark) {
         bookmarklist.add(bookmark);
+        System.out.println("Test for Webhook");
     }
 }
