@@ -21,22 +21,26 @@ public class BookmarkTest {
     }
 
     @Test
-    public void addTagToBookmark(){
+    public void addTagToBookmark() throws MalformedURLException {
+        // Arrange
         Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
-
+        // Act & Assert
         bookmark.addTag("News");
     }
 
     @Test
-    public void checkIfTwoTagsAreAddedToBookmark(){
+    public void checkIfTwoTagsAreAddedToBookmark() throws MalformedURLException {
+        // Arrange
         int expected = 2;
         Bookmark bookmark = new Bookmark(new URL("https://www.orf.at/"));
         bookmark.addTag("News");
         bookmark.addTag("Sports");
 
+        // Act
         ArrayList<String> taglist = bookmark.getTags();
         int result = taglist.size();
 
+        // Assert
         assertEquals(expected, result);
     }
 }
