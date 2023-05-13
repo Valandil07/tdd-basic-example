@@ -85,6 +85,22 @@ public class BookmarkToolTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void checkIfNoDuplicateBookmarksAreSaved() throws MalformedURLException {
+        // Arrange
+        ArrayList<Bookmark> expected = new ArrayList<Bookmark>();
+        Bookmark bm = new Bookmark(new URL("https://www.orf.at/"));
+        expected.add(bm);
+        BookmarkTool bmt = new BookmarkTool();
 
+        // Act
+        bmt.addBookmark(bm);
+        bmt.addBookmark(bm);
+        ArrayList<Bookmark> result = bmt.getBookmarkList();
+
+        // Assert
+        assertEquals(expected, result);
+        assertEquals(expected.size(), result.size());
+    }
 
 }

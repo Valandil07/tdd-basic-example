@@ -59,4 +59,20 @@ public class BookmarkTest {
         assertThrows(IllegalArgumentException.class,
                 () -> bookmark.addTag("Web"));
     }
+
+    @Test
+    public void ensureDuplicateBookmarkIncreasesRating() throws MalformedURLException {
+        // Arrange
+        int expected = 1;
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm = new Bookmark(new URL("https://www.orf.at/"));
+        bmt.addBookmark(bm);
+
+        // Act
+        bmt.addBookmark(bm);
+        int result = bmt.getBookmarkList().get(0).getRating();
+
+        // Assert
+        assertEquals(expected, result);
+    }
 }
