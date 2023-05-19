@@ -126,8 +126,9 @@ public class BookmarkTest {
     @Test
     public void BookmarkHashCode() throws MalformedURLException {
         // Arrange
-        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
-        int expected = -925338702;
+        URL url = new URL("https://www.orf.at/");
+        Bookmark bm1 = new Bookmark(url);
+        int expected = 31 * 7 + (url == null ? 0 : url.hashCode());
 
         // Act
         int result = bm1.hashCode();
