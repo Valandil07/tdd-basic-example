@@ -50,7 +50,7 @@ public class BookmarkToolTest {
 
         BookmarkTool bmt = new BookmarkTool();
 
-        ArrayList<Bookmark> result = bmt.getBookmarkList();
+        List<Bookmark> result = bmt.getBookmarkList();
         assertEquals(result, expected);
     }
 
@@ -65,7 +65,7 @@ public class BookmarkToolTest {
 
         bmt.addBookmark(bm);
 
-        ArrayList<Bookmark> result = bmt.getBookmarkList();
+        List<Bookmark> result = bmt.getBookmarkList();
         assertEquals(expected, result);
     }
     @Test
@@ -81,7 +81,7 @@ public class BookmarkToolTest {
         bmt.addBookmark(bm1);
         bmt.addBookmark(bm2);
 
-        ArrayList<Bookmark> result = bmt.getBookmarkList();
+        List<Bookmark> result = bmt.getBookmarkList();
         assertEquals(expected, result);
     }
 
@@ -96,7 +96,7 @@ public class BookmarkToolTest {
         // Act
         bmt.addBookmark(bm);
         bmt.addBookmark(bm);
-        ArrayList<Bookmark> result = bmt.getBookmarkList();
+        List<Bookmark> result = bmt.getBookmarkList();
 
         // Assert
         assertEquals(expected, result);

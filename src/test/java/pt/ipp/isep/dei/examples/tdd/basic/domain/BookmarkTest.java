@@ -7,6 +7,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -44,7 +45,7 @@ public class BookmarkTest {
         bookmark.addTag(tag2);
 
         // Act
-        ArrayList<String> taglist = bookmark.getTags();
+        List<String> taglist = bookmark.getTags();
         int result = taglist.size();
 
         // Assert

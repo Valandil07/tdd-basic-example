@@ -1,7 +1,10 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bookmark {
 
@@ -11,7 +14,7 @@ public class Bookmark {
 
     public Bookmark(URL url) {
         this.url = url;
-        tags = new ArrayList<String>();
+        tags = new ArrayList<>();
         this.rating = 0;
     }
 
@@ -22,7 +25,7 @@ public class Bookmark {
         tags.add(tag);
     }
 
-    public ArrayList<String> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
@@ -53,8 +56,14 @@ public class Bookmark {
 
     @Override
     public int hashCode() {
+        URI uri;
+        try {
+            uri = url.toURI();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
         int hash = 7;
-        hash = 31 * hash + (url == null ? 0 : url.hashCode());
+        hash = 31 * hash + uri.hashCode();
         return hash;
     }
 }

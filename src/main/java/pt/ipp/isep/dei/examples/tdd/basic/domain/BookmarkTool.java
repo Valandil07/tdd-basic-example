@@ -1,14 +1,15 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookmarkTool {
     private ArrayList<Bookmark> bookmarklist;
     public BookmarkTool() {
-        bookmarklist = new ArrayList<Bookmark>();
+        bookmarklist = new ArrayList<>();
     }
 
-    public ArrayList<Bookmark> getBookmarkList() {
+    public List<Bookmark> getBookmarkList() {
         return bookmarklist;
     }
 
