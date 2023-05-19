@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class Bookmark {
+
     private URL url;
     private ArrayList<String> tags;
     private int rating;
@@ -53,6 +54,8 @@ public class Bookmark {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int hash = 7;
+        hash = 31 * hash + (url == null ? 0 : url.hashCode());
+        return hash;
     }
 }
