@@ -1,5 +1,6 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
+import java.awt.print.Book;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -48,5 +49,10 @@ public class Bookmark {
 
         Bookmark b = (Bookmark) obj;
         return url.toString().equals(b.getURL().toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

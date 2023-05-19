@@ -92,4 +92,19 @@ public class BookmarkTest {
         // Assert
         assertEquals(expected, result);
     }
+
+    @Test
+    public void BookmarkEqualsReturnFalseWrongObjectType() throws MalformedURLException {
+        // Arrange
+        boolean expected = false;
+        String wrongtype = "Test";
+        Bookmark bm = new Bookmark(new URL("https://www.orf.at/"));
+
+
+        // Act
+        boolean result = bm.equals(wrongtype);
+
+        // Assert
+        assertEquals(expected, result);
+    }
 }
