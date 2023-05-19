@@ -3,6 +3,8 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import org.junit.jupiter.api.Test;
 
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -124,11 +126,12 @@ public class BookmarkTest {
     }
 
     @Test
-    public void BookmarkHashCode() throws MalformedURLException {
+    public void BookmarkHashCode() throws MalformedURLException, URISyntaxException {
         // Arrange
         URL url = new URL("https://www.orf.at/");
+        URI uri = url.toURI();
         Bookmark bm1 = new Bookmark(url);
-        int expected = 31 * 7 + (url == null ? 0 : url.hashCode());
+        int expected = 31 * 7 + (uri == null ? 0 : uri.hashCode());
 
         // Act
         int result = bm1.hashCode();
