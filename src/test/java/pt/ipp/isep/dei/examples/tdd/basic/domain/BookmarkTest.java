@@ -140,5 +140,13 @@ public class BookmarkTest {
         // Assert
         assertEquals(expected, result);
     }
+    @Test
+    public void BookmarkHashcodeThrowsExceptionWrongURI() throws MalformedURLException {
+        URL url = new URL("https:// www.geeksfor>geeks.com");
+        Bookmark bm1 = new Bookmark(url);
+
+        assertThrows(RuntimeException.class,
+                () -> bm1.hashCode());
+    }
 
 }
