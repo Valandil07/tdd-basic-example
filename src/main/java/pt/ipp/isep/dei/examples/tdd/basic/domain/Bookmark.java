@@ -1,6 +1,5 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
-import java.awt.print.Book;
 import java.net.URL;
 import java.util.ArrayList;
 
