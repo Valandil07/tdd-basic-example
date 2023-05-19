@@ -107,4 +107,20 @@ public class BookmarkTest {
         // Assert
         assertEquals(expected, result);
     }
+
+    @Test
+    public void BookmarkEqualsTrue() throws MalformedURLException {
+        // Arrange
+        boolean expected = true;
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        Bookmark bm2 = new Bookmark(new URL("https://www.orf.at/"));
+
+
+        // Act
+        boolean result = bm1.equals(bm2);
+
+        // Assert
+        assertEquals(expected, result);
+    }
+
 }
