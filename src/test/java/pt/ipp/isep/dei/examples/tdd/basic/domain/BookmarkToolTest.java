@@ -118,14 +118,15 @@ public class BookmarkToolTest {
         bmt.addBookmark(bm3);
 
         List<Bookmark> result;
-        String keyword = "News";
+        List<String> keywords = new ArrayList<>();
+        keywords.add("News");
 
         ArrayList<Bookmark> expected = new ArrayList<>();
         expected.add(bm1);
         expected.add(bm2);
 
         // Act
-        result = bmt.filterByKeywords(keyword);
+        result = bmt.filterByKeywords(keywords);
 
         // Assert
         assertEquals(expected, result);
@@ -146,11 +147,12 @@ public class BookmarkToolTest {
         bmt.addBookmark(bm2);
         bmt.addBookmark(bm3);
 
-        String keyword = "abc";
+        List<String> keywords = new ArrayList<>();
+        keywords.add("abc");
 
         // Act & Assert
         assertThrows(IllegalArgumentException.class,
-                () -> bmt.filterByKeywords(keyword));
+                () -> bmt.filterByKeywords(keywords));
     }
 
     @Test
@@ -170,13 +172,14 @@ public class BookmarkToolTest {
         bmt.addBookmark(bm3);
 
         List<Bookmark> result;
-        String keyword = "Sport";
+        List<String> keywords = new ArrayList<>();
+        keywords.add("Sport");
 
         ArrayList<Bookmark> expected = new ArrayList<>();
         expected.add(bm1);
 
         // Act
-        result = bmt.filterByKeywords(keyword);
+        result = bmt.filterByKeywords(keywords);
 
         // Assert
         assertEquals(expected, result);
