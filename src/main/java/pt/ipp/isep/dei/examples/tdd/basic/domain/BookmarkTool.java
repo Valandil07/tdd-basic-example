@@ -1,6 +1,7 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BookmarkTool {
@@ -37,7 +38,7 @@ public class BookmarkTool {
         ArrayList<Bookmark> result = new ArrayList<>();
 
         if(keywords.isEmpty()){
-            return result;
+            return Collections.emptyList();
         }
         for (Bookmark bm:bookmarklist) {
             tags = bm.getTags();

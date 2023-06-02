@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -259,7 +260,7 @@ public class BookmarkToolTest {
         List<Bookmark> result;
         List<String> keywords = new ArrayList<>();
 
-        ArrayList<Bookmark> expected = new ArrayList<>();
+        List<Object> expected = Collections.emptyList();
 
         // Act
         result = bmt.filterByKeywords(keywords);
