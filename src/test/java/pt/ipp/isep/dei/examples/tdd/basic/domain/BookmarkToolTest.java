@@ -182,4 +182,82 @@ public class BookmarkToolTest {
         // Assert
         assertEquals(expected, result);
     }
+
+    @Test
+    public void filterBookmarksByTwoValidKeywords() throws MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        bm1.addTag("News");
+        bm1.addTag("Sport");
+        Bookmark bm2 = new Bookmark(new URL("https://www.reddit.com/"));
+        bm2.addTag("News");
+        bm2.addTag("Social Media");
+        Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
+        bm2.addTag("Education");
+        bmt.addBookmark(bm1);
+        bmt.addBookmark(bm2);
+        bmt.addBookmark(bm3);
+
+        List<Bookmark> result;
+        List<String> keywords = new ArrayList<>();
+        keywords.add("Social Media");
+        keywords.add("News");
+
+        ArrayList<Bookmark> expected = new ArrayList<>();
+        expected.add(bm2);
+
+        // Act
+        result = bmt.filterByKeyword(keywords);
+
+        // Assert
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void filterBookmarksByTwoValidKeywordsAndOneInvalidKeyword() throws MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        bm1.addTag("News");
+        Bookmark bm2 = new Bookmark(new URL("https://www.reddit.com/"));
+        bm2.addTag("News");
+        bm2.addTag("Social Media");
+        Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
+        bm2.addTag("Education");
+        bmt.addBookmark(bm1);
+        bmt.addBookmark(bm2);
+        bmt.addBookmark(bm3);
+
+        List<String> keywords = new ArrayList<>();
+        keywords.add("Social Media");
+        keywords.add("abc");
+        keywords.add("News");
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+                () -> bmt.filterByKeyword(keywords));
+    }
+
+    @Test
+    public void filterBookmarksByEmptyKeywordList() throws MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        bm1.addTag("News");
+        Bookmark bm2 = new Bookmark(new URL("https://www.reddit.com/"));
+        bm2.addTag("News");
+        bm2.addTag("Social Media");
+        Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
+        bm2.addTag("Education");
+        bmt.addBookmark(bm1);
+        bmt.addBookmark(bm2);
+        bmt.addBookmark(bm3);
+
+        List<String> keywords = new ArrayList<>();
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+                () -> bmt.filterByKeyword(keywords));
+    }
 }
