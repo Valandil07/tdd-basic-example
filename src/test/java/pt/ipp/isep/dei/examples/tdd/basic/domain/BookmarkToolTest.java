@@ -113,7 +113,7 @@ public class BookmarkToolTest {
         bm2.addTag("News");
         bm2.addTag("Social Media");
         Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
-        bm2.addTag("Education");
+        bm3.addTag("Education");
         bmt.addBookmark(bm1);
         bmt.addBookmark(bm2);
         bmt.addBookmark(bm3);
@@ -143,7 +143,7 @@ public class BookmarkToolTest {
         bm2.addTag("News");
         bm2.addTag("Social Media");
         Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
-        bm2.addTag("Education");
+        bm3.addTag("Education");
         bmt.addBookmark(bm1);
         bmt.addBookmark(bm2);
         bmt.addBookmark(bm3);
@@ -167,7 +167,7 @@ public class BookmarkToolTest {
         bm2.addTag("News");
         bm2.addTag("Social Media");
         Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
-        bm2.addTag("Education");
+        bm3.addTag("Education");
         bmt.addBookmark(bm1);
         bmt.addBookmark(bm2);
         bmt.addBookmark(bm3);
@@ -197,7 +197,7 @@ public class BookmarkToolTest {
         bm2.addTag("News");
         bm2.addTag("Social Media");
         Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
-        bm2.addTag("Education");
+        bm3.addTag("Education");
         bmt.addBookmark(bm1);
         bmt.addBookmark(bm2);
         bmt.addBookmark(bm3);
@@ -227,7 +227,7 @@ public class BookmarkToolTest {
         bm2.addTag("News");
         bm2.addTag("Social Media");
         Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
-        bm2.addTag("Education");
+        bm3.addTag("Education");
         bmt.addBookmark(bm1);
         bmt.addBookmark(bm2);
         bmt.addBookmark(bm3);
@@ -252,13 +252,46 @@ public class BookmarkToolTest {
         bm2.addTag("News");
         bm2.addTag("Social Media");
         Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
-        bm2.addTag("Education");
+        bm3.addTag("Education");
         bmt.addBookmark(bm1);
         bmt.addBookmark(bm2);
         bmt.addBookmark(bm3);
 
         List<Bookmark> result;
         List<String> keywords = new ArrayList<>();
+
+        ArrayList<Bookmark> expected = new ArrayList<>();
+        expected.add(bm1);
+        expected.add(bm2);
+        expected.add(bm3);
+
+        // Act
+        result = bmt.filterByKeywords(keywords);
+
+        // Assert
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void filterBookmarksByMoreKeywordsThanTagsSet() throws MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        bm1.addTag("News");
+        Bookmark bm2 = new Bookmark(new URL("https://www.reddit.com/"));
+        bm2.addTag("News");
+        bm2.addTag("Social Media");
+        Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
+        bm3.addTag("Education");
+        bmt.addBookmark(bm1);
+        bmt.addBookmark(bm2);
+        bmt.addBookmark(bm3);
+
+        List<Bookmark> result;
+        List<String> keywords = new ArrayList<>();
+        keywords.add("Social Media");
+        keywords.add("Education");
+        keywords.add("News");
 
         List<Object> expected = Collections.emptyList();
 

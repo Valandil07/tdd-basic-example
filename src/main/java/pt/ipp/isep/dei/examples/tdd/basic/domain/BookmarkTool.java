@@ -38,7 +38,7 @@ public class BookmarkTool {
         ArrayList<Bookmark> result = new ArrayList<>();
 
         if(keywords.isEmpty()){
-            return Collections.emptyList();
+            return bookmarklist;
         }
         for (Bookmark bm:bookmarklist) {
             tags = bm.getTags();
