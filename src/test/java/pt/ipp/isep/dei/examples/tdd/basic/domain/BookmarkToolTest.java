@@ -256,10 +256,15 @@ public class BookmarkToolTest {
         bmt.addBookmark(bm2);
         bmt.addBookmark(bm3);
 
+        List<Bookmark> result;
         List<String> keywords = new ArrayList<>();
 
-        // Act & Assert
-        assertThrows(IllegalArgumentException.class,
-                () -> bmt.filterByKeywords(keywords));
+        ArrayList<Bookmark> expected = new ArrayList<>();
+
+        // Act
+        result = bmt.filterByKeywords(keywords);
+
+        // Assert
+        assertEquals(expected, result);
     }
 }
