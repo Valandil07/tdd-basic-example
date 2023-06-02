@@ -103,4 +103,83 @@ public class BookmarkToolTest {
         assertEquals(expected.size(), result.size());
     }
 
+    @Test
+    public void filterBookmarksByKeywordWithKeywordLengthOfFour() throws MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        bm1.addTag("News");
+        Bookmark bm2 = new Bookmark(new URL("https://www.reddit.com/"));
+        bm2.addTag("News");
+        bm2.addTag("Social Media");
+        Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
+        bm2.addTag("Education");
+        bmt.addBookmark(bm1);
+        bmt.addBookmark(bm2);
+        bmt.addBookmark(bm3);
+
+        List<Bookmark> result;
+        String keyword = "News";
+
+        ArrayList<Bookmark> expected = new ArrayList<>();
+        expected.add(bm1);
+        expected.add(bm2);
+
+        // Act
+        result = bmt.filterByKeyword(keyword);
+
+        // Assert
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void filterBookmarksByKeywordWithKeywordLengthOfThree() throws MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        bm1.addTag("News");
+        Bookmark bm2 = new Bookmark(new URL("https://www.reddit.com/"));
+        bm2.addTag("News");
+        bm2.addTag("Social Media");
+        Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
+        bm2.addTag("Education");
+        bmt.addBookmark(bm1);
+        bmt.addBookmark(bm2);
+        bmt.addBookmark(bm3);
+
+        String keyword = "abc";
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class,
+                () -> bmt.filterByKeyword(keyword));
+    }
+
+    @Test
+    public void filterBookmarksByKeywordWithKeywordLengthOfFive() throws MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        bm1.addTag("News");
+        bm1.addTag("Sport");
+        Bookmark bm2 = new Bookmark(new URL("https://www.reddit.com/"));
+        bm2.addTag("News");
+        bm2.addTag("Social Media");
+        Bookmark bm3 = new Bookmark(new URL("https://www.fh-campuswien.ac.at/"));
+        bm2.addTag("Education");
+        bmt.addBookmark(bm1);
+        bmt.addBookmark(bm2);
+        bmt.addBookmark(bm3);
+
+        List<Bookmark> result;
+        String keyword = "Sport";
+
+        ArrayList<Bookmark> expected = new ArrayList<>();
+        expected.add(bm1);
+
+        // Act
+        result = bmt.filterByKeyword(keyword);
+
+        // Assert
+        assertEquals(expected, result);
+    }
 }
