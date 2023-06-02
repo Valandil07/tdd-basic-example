@@ -36,6 +36,9 @@ public class BookmarkTool {
         List<String> tags;
         ArrayList<Bookmark> result = new ArrayList<>();
 
+        if(keywords.isEmpty()){
+            return result;
+        }
         for (Bookmark bm:bookmarklist) {
             tags = bm.getTags();
             if(tags.containsAll(keywords)){
