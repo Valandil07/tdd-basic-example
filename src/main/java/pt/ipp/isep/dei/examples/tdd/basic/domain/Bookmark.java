@@ -60,7 +60,7 @@ public class Bookmark {
         try {
             uri = url.toURI();
         } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
+            throw new URLSyntaxRuntimeException(e);
         }
         int hash = 7;
         hash = 31 * hash + uri.hashCode();
