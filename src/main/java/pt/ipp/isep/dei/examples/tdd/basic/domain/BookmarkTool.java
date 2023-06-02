@@ -25,4 +25,20 @@ public class BookmarkTool {
             bookmarklist.add(bookmark);
         }
     }
+
+    public List<Bookmark> filterByKeyword(String keyword) {
+        if(keyword.length() < 4){
+            throw new IllegalArgumentException("Keyword is too short!");
+        }
+        List<String> tags;
+        ArrayList<Bookmark> result = new ArrayList<>();
+
+        for (Bookmark bm:bookmarklist) {
+            tags = bm.getTags();
+            if(tags.contains(keyword)){
+                result.add(bm);
+            }
+        }
+        return result;
+    }
 }
