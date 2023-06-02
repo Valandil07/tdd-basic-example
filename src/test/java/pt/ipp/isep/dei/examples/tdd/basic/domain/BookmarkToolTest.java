@@ -1,7 +1,6 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import org.junit.jupiter.api.*;
 
-import java.awt.print.Book;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -126,7 +125,7 @@ public class BookmarkToolTest {
         expected.add(bm2);
 
         // Act
-        result = bmt.filterByKeyword(keyword);
+        result = bmt.filterByKeywords(keyword);
 
         // Assert
         assertEquals(expected, result);
@@ -151,7 +150,7 @@ public class BookmarkToolTest {
 
         // Act & Assert
         assertThrows(IllegalArgumentException.class,
-                () -> bmt.filterByKeyword(keyword));
+                () -> bmt.filterByKeywords(keyword));
     }
 
     @Test
@@ -177,7 +176,7 @@ public class BookmarkToolTest {
         expected.add(bm1);
 
         // Act
-        result = bmt.filterByKeyword(keyword);
+        result = bmt.filterByKeywords(keyword);
 
         // Assert
         assertEquals(expected, result);
@@ -208,7 +207,7 @@ public class BookmarkToolTest {
         expected.add(bm2);
 
         // Act
-        result = bmt.filterByKeyword(keywords);
+        result = bmt.filterByKeywords(keywords);
 
         // Assert
         assertEquals(expected, result);
@@ -236,7 +235,7 @@ public class BookmarkToolTest {
 
         // Act & Assert
         assertThrows(IllegalArgumentException.class,
-                () -> bmt.filterByKeyword(keywords));
+                () -> bmt.filterByKeywords(keywords));
     }
 
     @Test
@@ -258,6 +257,6 @@ public class BookmarkToolTest {
 
         // Act & Assert
         assertThrows(IllegalArgumentException.class,
-                () -> bmt.filterByKeyword(keywords));
+                () -> bmt.filterByKeywords(keywords));
     }
 }
