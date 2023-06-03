@@ -75,8 +75,6 @@ public class Bookmark {
                 tagToRemove = tag;
             }
         }
-        if(!tagToRemove.isEmpty()){
             tags.remove(tagToRemove);
-        }
     }
 }
