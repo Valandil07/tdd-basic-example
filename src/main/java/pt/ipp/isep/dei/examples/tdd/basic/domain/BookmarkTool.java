@@ -47,4 +47,8 @@ public class BookmarkTool {
         }
         return result;
     }
+
+    public void removeBookmark(Bookmark bm) {
+        bookmarklist.remove(bm);
+    }
 }
