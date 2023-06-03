@@ -149,4 +149,20 @@ public class BookmarkTest {
                 () -> bm1.hashCode());
     }
 
+    @Test
+    public void BookmarkRemoveTag() throws MalformedURLException {
+        // Arrange
+        int expected = 0;
+        URL url = new URL("https:// www.geeksforgeeks.com");
+        Bookmark bm1 = new Bookmark(url);
+        bm1.addTag("Tag1");
+
+        //Act
+        bm1.removeTag("Tag1");
+        int result = bm1.getTags().size();
+
+        // Assert
+        assertEquals(expected,result);
+
+    }
 }
