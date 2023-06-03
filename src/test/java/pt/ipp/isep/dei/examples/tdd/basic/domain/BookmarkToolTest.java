@@ -301,4 +301,45 @@ public class BookmarkToolTest {
         // Assert
         assertEquals(expected, result);
     }
+
+    @Test
+    public void removeOneBookmarkFromBookmarkTool() throws MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        bmt.addBookmark(bm1);
+        List<Bookmark> expected = bmt.getBookmarkList();
+
+        // Act
+        bmt.removeBookmark(bm1);
+        List<Bookmark> result = bmt.getBookmarkList();
+
+        // Assert
+        assertEquals(expected,result);
+
+    }
+
+    @Test
+    public void removeTwoBooksmarksFromBookmarkTool () throws  MalformedURLException {
+        // Arrange
+        BookmarkTool bmt = new BookmarkTool();
+        Bookmark bm1 = new Bookmark(new URL("https://www.orf.at/"));
+        Bookmark bm2 = new Bookmark(new URL("https://www.oe24.at/"));
+        Bookmark bm3 = new Bookmark(new URL("https://www.derstandard.at/"));
+        bmt.addBookmark(bm1);
+        List<Bookmark> expected = bmt.getBookmarkList();
+
+        bmt.addBookmark(bm2);
+        bmt.addBookmark(bm3);
+
+
+        // Act
+        bmt.removeBookmark(bm2);
+        bmt.removeBookmark(bm3);
+        List<Bookmark> result = bmt.getBookmarkList();
+
+        // Assert
+        assertEquals(expected,result);
+
+    }
 }
