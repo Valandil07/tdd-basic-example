@@ -5,7 +5,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+
 
 public class Bookmark {
 
@@ -69,14 +69,14 @@ public class Bookmark {
     }
 
     public void removeTag(String tagRemove) {
-        String tag_to_remove = null;
+        String tagToRemove = null;
         for(String tag : tags){
             if(tagRemove.equals(tag)){
-                tag_to_remove = tag;
+                tagToRemove = tag;
             }
         }
-        if(tag_to_remove != null){
-            tags.remove(tag_to_remove);
+        if(tagToRemove != null){
+            tags.remove(tagToRemove);
         }
     }
 }
