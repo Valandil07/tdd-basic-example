@@ -69,13 +69,13 @@ public class Bookmark {
     }
 
     public void removeTag(String tagRemove) {
-        String tagToRemove = null;
+        String tagToRemove = "";
         for(String tag : tags){
             if(tagRemove.equals(tag)){
                 tagToRemove = tag;
             }
         }
-        if(tagToRemove != null){
+        if(!tagToRemove.isEmpty()){
             tags.remove(tagToRemove);
         }
     }
