@@ -75,7 +75,7 @@ public class Bookmark {
                 tag_to_remove = tag;
             }
         }
-        if(!tag_to_remove.isEmpty()){
+        if(tag_to_remove != null){
             tags.remove(tag_to_remove);
         }
     }
