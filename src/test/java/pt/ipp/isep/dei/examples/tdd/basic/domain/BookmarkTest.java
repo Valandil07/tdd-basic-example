@@ -150,19 +150,41 @@ public class BookmarkTest {
     }
 
     @Test
-    public void BookmarkRemoveTag() throws MalformedURLException {
+    public void BookmarkRemoveOneTag() throws MalformedURLException {
         // Arrange
         int expected = 0;
         URL url = new URL("https:// www.geeksforgeeks.com");
         Bookmark bm1 = new Bookmark(url);
         bm1.addTag("Tag1");
 
-        //Act
+        // Act
         bm1.removeTag("Tag1");
+        int result = bm1.getTags().size();
+
+        // Assert
+        assertEquals(expected,result);
+    }
+
+    @Test
+    public void BookmarkRemoveTwoTags() throws MalformedURLException {
+        // Arrange
+        int expected = 1;
+        URL url = new URL("https:// www.geeksforgeeks.com");
+        Bookmark bm1 = new Bookmark(url);
+        bm1.addTag("Tag1");
+        bm1.addTag("Tag2");
+        bm1.addTag("Tag3");
+
+
+        // Act
+        bm1.removeTag("Tag1");
+        bm1.removeTag("Tag2");
         int result = bm1.getTags().size();
 
         // Assert
         assertEquals(expected,result);
 
     }
+
+
 }
